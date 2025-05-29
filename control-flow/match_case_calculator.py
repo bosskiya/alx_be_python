@@ -3,9 +3,9 @@
 number1 = int(input("Enter the first number: "))
 number2 = int(input("Enter the second number: "))
 
-operator = input("Choose the operation (+, -, *, /): ")
+operation = input("Choose the operation (+, -, *, /): ")
 
-match operator:
+match operation:
     case "+":
         print(f"The result is {number1 + number2}.")
     case "-":
