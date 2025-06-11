@@ -12,37 +12,21 @@ class TestSimpleCalculator(unittest.TestCase):
         """Set up the SimpleCalculator instance before each test."""
         self.calc = SimpleCalculator()
 
-    def test_add_positive(self):
-        result = self.calc.add(3, 4)
-        self.assertEqual(result, 7)
+    def test_addition(self):
+        self.assertEqual(self.calc.add(3, 4), 7)
+        self.assertEqual(self.calc.add(-3, 4), 1)
 
-    def test_add_negative(self):
-        result = self.calc.add(-3, 4)
-        self.assertEqual(result, 1)
+    def test_subtraction(self):
+        self.assertEqual(self.calc.subtract(3, 4), -1)
+        self.assertEqual(self.calc.subtract(-3, 4), -7)
 
-    def test_subtract_positive(self):
-        result = self.calc.subtract(3, 4)
-        self.assertEqual(result, -1)
-    
-    def test_subtract_negative(self):
-        result = self.calc.subtract(-3, 4)
-        self.assertEqual(result, -7)
+    def test_multiply(self):
+        self.assertEqual(self.calc.multiply(3, 4), 12)
+        self.assertEqual(self.calc.multiply(-3, 4), -12)
 
-    def test_multiply_positive(self):
-        result = self.calc.multiply(3, 4)
-        self.assertEqual(result, 12)
-
-    def test_multiply_negative(self):
-        result = self.calc.multiply(-3, 4)
-        self.assertEqual(result, -12)
-
-    def test_divide_positive(self):
-        result = self.calc.divide(6, 2)
-        self.assertEqual(result, 3)
-
-    def test_divide_positive(self):
-        result = self.calc.divide(6, 0)
-        self.assertEqual(result, None)
+    def test_divide(self):
+        self.assertEqual(self.calc.divide(6, 2), 3)
+        self.assertEqual(self.calc.divide(6, 0), None)
 
 if __name__ == "__main__":
     unittest.main()
